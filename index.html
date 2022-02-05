@@ -1,6 +1,74 @@
 
 <!DOCTYPE html>
 <style>
+	.card {
+    display: flex;
+    border-bottom-style: inset;
+    border-bottom-color: #B8B8B8;
+    border-bottom-width: 1px;
+}
+
+.title {
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+    width: 74.95%;
+    height: 100%;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+}
+.dropbtn {
+  background-color: #2A2929;
+  color: white;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  float: right;
+  display: inline-block;
+  float: right;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;margin-top: 3px;right: 4px;
+    left: auto;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #6F6B6B;}
+
 	.demoWrapper {
 		position: relative;
 		height: 0;
@@ -16,7 +84,8 @@
 	}
 	body {
 		background-color:rgb(255,255,22,0.94;
-	}		
+	}
+  /* Dropdown Button */	
 </style>
 <head>
   <title>dashboard | Smartville</title>
@@ -25,7 +94,21 @@
 </head>
 <html>
 <body>
-
+<div class='card'>
+  <img style="width:40px;height:40px;padding:5px;margin-left:10px" 
+       src="https://drive.google.com/uc?export=download&id=1aQBafk6Tjxzk8vddhBQdoIsFRQwRshlv">
+  <div class='title'>
+    SMARTVILLE Power Hub
+  </div>
+  <div class='dropdown' style = style="float:right;">
+    <button class="dropbtn">Devices</button>
+    <div class="dropdown-content">
+      <a href="https://smartville.io/">M1</a>
+      <a href="https://smartville.io/">M2</a>
+      <a href="https://smartville.io/">M3</a>
+    </div>
+  </div>
+</div>
 <div class="demoWrapper">
 	<iframe min-width="415" src="https://thingsboard.cloud/dashboard/29c850f0-4bcf-11ec-8b0d-a7a2fb97468b?publicId=1d9b61f0-6362-11ec-a919-556e8dbef35c" allowfullscreen></iframe>
 </div>

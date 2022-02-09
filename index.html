@@ -1,11 +1,42 @@
 
 <!DOCTYPE html>
 <style>
-	.card {
+.card {
     display: flex;
     border-bottom-style: inset;
     border-bottom-color: #B8B8B8;
     border-bottom-width: 1px;
+    height:60px;
+}
+
+.Location {
+  font-family: 'Roboto', sans-serif;
+  position:static;
+  margin-left:259px;
+  display:flex;
+  
+  font-size:24px;
+  margin-top:13px;
+  font-weight:500;
+}
+
+.btn {
+  border-radius:10px;
+  background-color: white; /* Blue background */
+  border-width:3px;
+  color: black; /* White text */
+  padding: 12px 16px; /* Some padding */
+  height:50px;
+  margin-top:1px;
+  margin-left:50px;
+  font-size: 20px; /* Set a font size */
+  line-height:10px;
+  cursor: pointer; /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
 }
 
 .title {
@@ -21,22 +52,25 @@
     justify-content: left;
 }
 .dropbtn {
-  background-color: #2A2929;
-  color: white;
+  background-color: white;
+  position:absolute;
+  margin-left:556px;
+  color: black;
   padding: 15px;
   font-size: 18px;
-  border: none;
+/*   border: none; */
+  border-width:3px;
   cursor: pointer;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 10px;
+  margin-top: -3px;
+/*   height:40px; */
+
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
-  float: right;
   display: inline-block;
-  float: right;
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -63,11 +97,11 @@
 .dropdown-content a:hover {background-color: #ddd;}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;margin-top: 3px;right: 4px;
-    left: auto;}
+.dropdown:hover .dropdown-content {display: block;margin-top: 60px;right: -243px;
+   position:absolute}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #6F6B6B;}
+.dropdown:hover .dropbtn {background-color: #A1A0A0;}
 
 	.demoWrapper {
 		position: relative;
@@ -85,8 +119,11 @@
 	body {
 		background-color:rgb(255,255,22,0.94;
 	}
-  /* Dropdown Button */	
+  /* Dropdown Button */
+
+
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
   <title>dashboard | Smartville</title>
   <link rel="icon" href="https://smartville.io/wp-content/uploads/2021/05/favicon.png">
@@ -95,13 +132,17 @@
 <html>
 <body>
 <div class='card'>
-  <img style="width:40px;height:40px;padding:5px;margin-left:10px" 
-       src="https://drive.google.com/uc?export=download&id=1aQBafk6Tjxzk8vddhBQdoIsFRQwRshlv">
-  <div class='title'>
-    SMARTVILLE Power Hub
+  <img style="width:320px;height:47px;padding:5px;margin-left:10px" 
+       src="https://drive.google.com/uc?export=download&id=14QemGFuDG4SsEXWbg8521RT593Ne0Pvy">
+  <div id = "location" class="Location">
+    Trader St.
   </div>
-  <div class='dropdown' style = style="float:right;">
-    <button class="dropbtn">Devices</button>
+  
+  
+  <button class="btn" title="Back Main" onclick="https://dashboard.smartville.io/"><i class="fa fa-home"></i></button>
+  
+  <div class='dropdown'>
+   <button class="dropbtn">Devices</button>
     <div class="dropdown-content">
       <a href="https://smartville.io/">M1</a>
       <a href="https://smartville.io/">M2</a>
@@ -115,5 +156,3 @@
 
 </body>
 </html>
-
-

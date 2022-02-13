@@ -32,7 +32,14 @@
     line-height: 10px;
     cursor: pointer;
     border-color: #CAC7C7;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     /* Mouse pointer on hover */
+}
+
+.homeBtn:hover {
+    color: #fff;
+    background-color: #CAC7C7;
+    border-color: #CAC7C7;
 }
 
 

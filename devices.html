@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+    <style>
+        .enlarge {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            margin: 0 auto;
+            background-position:center
+        }
+        
+        .enlarge img {
+            width: 80%;
+            transition: 0.5s all ease-in-out;
+        }
+        
+        .enlarge:hover img {
+            transform: scale(1.2);
+        }
+        .container {
+        display: table;
+        width: 20%;
+        }
+
+        .table-row {
+        
+        display: table-row;
+        height: 100px;
+        }
+    .table-cell {
+        background: white;
+        display: table-cell;
+        padding: 2px;
+        }
+
+    html, body {
+    height: 100%;
+    }
+
+    html {
+    display: table;
+    margin: auto;
+    }
+
+    body {
+    display: table-cell;
+    vertical-align: middle;
+    }
+
+
+    </style>
+
+
+<head>
+
+</head>
+
+<body>
+
+<div class="element">
+
+	
+</div>
+
+
+<table class="container">
+    <tr class="table-row">
+     <td class="table-cell">
+        <a href="https://www.google.com">
+            <div class="enlarge" >
+                <img src="1.png"/>
+            </div>
+        </a>
+       
+      </td>
+      <td class="table-cell">
+        <a href="#">
+            <div class="enlarge" >
+                <img src="2.png"/>
+            </div>
+        </a>
+       
+      </td>
+      <td class="table-cell">
+        <a href="#">
+            <div class="enlarge" >
+                <img src="3.png"/>
+            </div>
+        </a>
+       
+      
+    
+    </td>
+    </tr>
+  </table>
+
+
+
+</body>
+
+</html>

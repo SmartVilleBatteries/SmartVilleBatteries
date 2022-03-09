@@ -1,147 +1,321 @@
-.card {
-    display: flex;
-    border-bottom-style: inset;
-    border-bottom-color: #B8B8B8;
-    border-bottom-width: 1px;
-    height: 60px;
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.Location {
-    font-family: 'Roboto', sans-serif;
-    position: static;
-    margin-left: 10%;
-    display: flex;
-    font-size: 24px;
-    margin-top: 13px;
-    font-weight: 500;
+:root{
+    /* ===== Colors ===== */
+    --body-color: white;
+    --sidebar-color: rgb(231, 241, 248);
+    --primary-color: #b4b4b4;
+    --primary-color-light: #dadada;
+    --toggle-color: rgb(194, 192, 192);
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
 }
 
-.homeBtn {
-    border-radius: 10px;
-    background-color: white;
-    /* Blue background */
-    border-width: 1.5px;
-    color: black;
-    /* White text */
-    height: 37px;
-    width: 55px;
-    margin-top: 7px;
-    margin-left: 150px;
-    font-size: 16px;
-    /* Set a font size */
-    line-height: 10px;
-    cursor: pointer;
-    border-color: #CAC7C7;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    /* Mouse pointer on hover */
+body{
+    min-height: 100vh;
+    background-color: var(--body-color);
+    transition: var(--tran-05);
 }
 
-.homeBtn:hover {
+::selection{
+    background-color: var(--primary-color);
     color: #fff;
-    background-color: #CAC7C7;
-    border-color: #CAC7C7;
 }
 
-
-/* Darker background on mouse-over */
-
-.btn:hover {
-    background-color: #ddd;
+body.dark{
+    --body-color: #031b33;
+    --sidebar-color: #020f1d;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
 }
 
-.title {
-    font-family: 'Roboto', sans-serif;
-    padding: 15px;
-    font-weight: bold;
-    font-size: 24px;
-    color: black;
-    width: 74.95%;
+/* ===== Sidebar ===== */
+ .sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    padding: 5px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;  
+}
+.sidebar.close{
+    width: 88px;
+}
+
+/* ===== Reusable code - Here ===== */
+.sidebar li{
+    height: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.sidebar header .image,
+.sidebar .icon{
+    min-width: 60px;
+    border-radius: 6px;
+}
+
+.sidebar .icon{
+    min-width: 60px;
+    border-radius: 6px;
     height: 100%;
     display: flex;
-    align-items: left;
-    justify-content: left;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
 }
 
-.dropbtn {
-    background-color: white;
-    position: absolute;
-    margin-left: 602px;
-    color: black;
-    padding: 15px;
+.sidebar .text,
+.sidebar .icon{
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.sidebar .text{
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 1;
+}
+.sidebar.close .text{
+    opacity: 0;
+}
+/* =========================== */
+
+.sidebar header{
+    position: relative;
+}
+
+.sidebar header .image-text{
+    display: flex;
+    align-items: center;
+}
+.sidebar header .logo-text{
+    display: flex;
+    flex-direction: column;
+
+}
+header .image-text .name {
+    margin-top: 2px;
     font-size: 18px;
-    /*   border: none; */
-    border-width: 3px;
+    font-weight: 600;
+}
+
+header .image-text .profession{
+    font-size: 16px;
+    margin-top: -2px;
+    display: block;
+}
+
+.sidebar header .image{
+    display: flex;
+    align-items: right;
+    justify-content: right;
+}
+
+.sidebar header .image img{
+    width: 50px;
+    border-radius: 1px;
+}
+
+.sidebar header .toggle{
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background-color: var(--primary-color);
+    color: var(--sidebar-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
     cursor: pointer;
-    border-radius: 10px;
-    margin-top: -3px;
-    /*   height:40px; */
+    transition: var(--tran-05);
 }
 
-
-/* The container <div> - needed to position the dropdown content */
-
-.dropdown {
-/*     position: relative;
-    display: inline-block;
-    margin-top: 6px;
-    margin-left: 400px; */
-    margin-left: auto; 
-    margin-right: 0;
+body.dark .sidebar header .toggle{
+    color: var(--text-color);
 }
 
-
-/* Dropdown Content (Hidden by Default) */
-
-.dropdown-content {
-    display: none;
-    font-family: 'Roboto', sans-serif;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+.sidebar.close .toggle{
+    transform: translateY(-50%) rotate(0deg);
 }
 
+.sidebar .menu{
+    margin-top: 40px;
+}
 
-/* Links inside the dropdown */
+.sidebar li.search-box{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    cursor: pointer;
+    transition: var(--tran-05);
+}
 
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
+.sidebar li.search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-light);
+    color: var(--text-color);
+    border-radius: 6px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+.sidebar li a{
+    list-style: none;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
     text-decoration: none;
-    display: block;
+    transition: var(--tran-03);
 }
 
-
-/* Change color of dropdown links on hover */
-
-.dropdown-content a:hover {
-    background-color: #ddd;
+.sidebar li a:hover{
+    background-color: var(--primary-color);
+}
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text{
+    color: var(--sidebar-color);
+}
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text{
+    color: var(--text-color);
 }
 
+.sidebar .menu-bar{
+    height: calc(100% - 55px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: scroll;
+}
+.menu-bar::-webkit-scrollbar{
+    display: none;
+}
+.sidebar .menu-bar .mode{
+    border-radius: 6px;
+    background-color: var(--primary-color-light);
+    position: relative;
+    transition: var(--tran-05);
+}
 
-/* Show the dropdown menu on hover */
+.menu-bar .mode .sun-moon{
+    height: 50px;
+    width: 60px;
+}
 
-.dropdown:hover .dropdown-content {
-    display: block;
-    margin-left: -20px;
+.mode .sun-moon i{
     position: absolute;
-    /* margin-top: 55px; */
+}
+.mode .sun-moon i.sun{
+    opacity: 0;
+}
+body.dark .mode .sun-moon i.sun{
+    opacity: 1;
+}
+body.dark .mode .sun-moon i.moon{
+    opacity: 0;
 }
 
+.menu-bar .bottom-content .toggle-switch{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.toggle-switch .switch{
+    position: relative;
+    height: 22px;
+    width: 40px;
+    border-radius: 25px;
+    background-color: var(--toggle-color);
+    transition: var(--tran-05);
+}
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
+.switch::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background-color: var(--sidebar-color);
+    transition: var(--tran-04);
+}
 
-.dropdown:hover .dropbtn {
-    background-color: white;
+body.dark .switch::before{
+    left: 20px;
+}
+
+.home{
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+}
+.home .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 12px 60px;
+}
+
+.sidebar.close ~ .home{
+    left: 78px;
+    height: 100vh;
+    width: calc(100% - 78px);
+}
+body.dark .home .text{
+    color: var(--text-color);
 }
 
 .demoWrapper {
     position: relative;
     height: 0;
-    padding-top: 200%;
+    padding-top: 200%; 
+    background:none transparent;
+/*	overflow: hidden; */
 }
-
 .demoWrapper iframe {
     position: absolute;
     top: 0%;
@@ -149,42 +323,5 @@
     width: 95%;
     height: 100%;
     border: 0;
-}
-
-body {
-    /* background-color:rgb(255,255,22,0.94; */
-}
-
-.devicesText {
-    color: black;
-    margin-top: 0px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-}
-
-.devicesBtn {
-    cursor: pointer;
-    height: 40px;
-    outline: 0;
-    display: inline-block;
-    font-weight: 500;
-    line-height: 1.5;
-    text-align: center;
-    background-color: transparent;
-    border: 1px solid transparent;
-    padding: 6px 12px;
-    font-size: 1rem;
-    border-radius: .25rem;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-    color: #CAC7C7;
-    border-color: #CAC7C7;
-    border-width: 2px;
-    width: 140px;
-}
-
-.devicesBtn:hover {
-    color: #fff;
-    background-color: #CAC7C7;
-    border-color: #CAC7C7;
+    background:none transparent;
 }

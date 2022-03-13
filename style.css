@@ -335,6 +335,10 @@ body.dark .home .text{
 
 @media screen and (max-width: 800px) {
   .home .text {
-    font-size:3vw;
+    font-size:3.5vw;
+    padding: 12px 10px;
+  }
+  .sidebar.close{
+    width: 5vw;
   }
 }

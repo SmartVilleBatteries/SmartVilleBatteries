@@ -286,6 +286,7 @@ body.dark .switch::before{
     position: absolute;
     top: 0;
     top: 0;
+  
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
@@ -326,7 +327,7 @@ body.dark .home .text{
     background:none transparent;
 }
 .toggleButton {
-  margin-top:40px;
+  margin-top:45px;
 }
 .searchButton {
 /*   margin-top:10px; */
@@ -336,9 +337,12 @@ body.dark .home .text{
 @media screen and (max-width: 800px) {
   .home .text {
     font-size:3.5vw;
-    padding: 12px 30px;
+    padding: 12px 10px;
   }
   .sidebar.close{
     width: 5vw;
+  }
+  .home {
+    margin-left:-30px;
   }
 }

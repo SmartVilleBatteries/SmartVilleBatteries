@@ -1,3 +1,4 @@
+/* Google Font Import - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
     margin: 0;
@@ -55,21 +56,18 @@ body.dark{
     z-index: 100;  
 }
 .sidebar.close{
-    /* width: 5vw; */
-    width: 85px;
+    width: 88px;
 }
 
 /* ===== Reusable code - Here ===== */
 .sidebar li{
-    height: 50px;
     list-style: none;
-    display: flex;
-    align-items: center;
     margin-top: 10px;
 }
 
 .sidebar header .image,
 .sidebar .icon{
+    height: 50px;
     min-width: 60px;
     border-radius: 6px;
 }
@@ -85,7 +83,8 @@ body.dark{
 }
 
 .sidebar .text,
-.sidebar .icon{
+.sidebar .icon,
+.sidebar .arrow{
     color: var(--text-color);
     transition: var(--tran-03);
 }
@@ -98,6 +97,11 @@ body.dark{
 }
 .sidebar.close .text{
     opacity: 0;
+}
+
+.sidebar .submenu-text{
+    white-space: nowrap;
+    font-size: 14px;
 }
 /* =========================== */
 
@@ -209,6 +213,11 @@ body.dark .sidebar header .toggle{
 body.dark .sidebar li a:hover .icon,
 body.dark .sidebar li a:hover .text{
     color: var(--text-color);
+}
+
+.sidebar li a .arrow{
+    margin-left: auto;
+    margin-right: 5px;
 }
 
 .sidebar .menu-bar{
@@ -334,6 +343,61 @@ body.dark .home .text{
 .searchButton {
 /*   margin-top:10px; */
 /*   width:3vw; */
+}
+
+.sidebar .menu-links li .sub-menu{
+  padding: 0px 0px 14px 20px;
+  margin-top: -10px;
+  display: none;
+  text-align: right;
+}
+.sidebar .menu-links .sub-menu li{
+  height: 30px;
+}
+
+.sidebar .menu-links li{
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+
+.sidebar .menu-links li.showMenu .sub-menu{
+  display: block;
+}
+
+.sidebar .menu-links li .sub-menu a{
+/*   list-style: none; */
+    padding-left:30%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: var(--tran-03);
+}
+
+.sidebar .menu-links li .sub-menu a:hover{
+    background-color: var(--primary-color);
+}
+
+.sidebar .menu-links li.showMenu i.arrow{
+  transform: rotate(-180deg);
+}
+
+.sidebar li .icon{
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+} 
+
+.sidebar li.search-box, li.mode{
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 800px) {

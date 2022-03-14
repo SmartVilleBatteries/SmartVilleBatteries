@@ -98,6 +98,21 @@
                             <span class="text nav-text">Notifications</span>
                         </a>
                     </li>
+                  
+                  
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Devices</span>
+                            <i class='bx bxs-chevron-down arrow' ></i>
+                        </a>
+                        
+                        <ul class="sub-menu">
+                          <li><a href="#" class='text submenu-text'>Device 1</a></li>
+                          <li><a href="#" class='text submenu-text'>Device 2</a></li>
+                          <li><a href="#" class='text submenu-text'>Device 3</a></li>
+                        </ul>
+                    </li>
                  
 
                 </ul>
@@ -142,26 +157,35 @@
       searchBtn = body.querySelector(".search-box"),
       modeSwitch = body.querySelector(".toggle-switch"),
       modeText = body.querySelector(".mode-text");
-
-
-toggle.addEventListener("click" , () =>{
-    sidebar.classList.toggle("close");
-})
-
-searchBtn.addEventListener("click" , () =>{
-    sidebar.classList.remove("close");
-})
-
-modeSwitch.addEventListener("click" , () =>{
-    body.classList.toggle("dark");
-    
-    if(body.classList.contains("dark")){
-        modeText.innerText = "Light mode";
-    }else{
-        modeText.innerText = "Dark mode";
         
-    }
-});
+      // click on arrow will show submenu of drop down
+      let arrow = document.querySelectorAll(".arrow");
+      for (var i = 0; i < arrow.length; i++) {
+        arrow[i].addEventListener("click", (e)=>{
+           let arrowParent = e.target.parentElement.parentElement;
+           arrowParent.classList.toggle("showMenu");
+        });
+      }
+
+
+        toggle.addEventListener("click" , () =>{
+            sidebar.classList.toggle("close");
+        })
+
+        searchBtn.addEventListener("click" , () =>{
+            sidebar.classList.remove("close");
+        })
+
+        modeSwitch.addEventListener("click" , () =>{
+            body.classList.toggle("dark");
+
+            if(body.classList.contains("dark")){
+                modeText.innerText = "Light mode";
+            }else{
+                modeText.innerText = "Dark mode";
+
+            }
+        });
     </script>
 
 </body>

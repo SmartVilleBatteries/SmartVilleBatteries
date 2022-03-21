@@ -350,6 +350,7 @@ body.dark .home .text{
   .sidebar header .image img{
     width: 30px;
     margin-top:-15px;
+    margin-left: 20px;
     border-radius: 1px;
 }
 

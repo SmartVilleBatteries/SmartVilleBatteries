@@ -98,21 +98,6 @@
                             <span class="text nav-text">Notifications</span>
                         </a>
                     </li>
-                  
-                  
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-bell icon'></i>
-                            <span class="text nav-text">Devices</span>
-                            <i class='bx bxs-chevron-down arrow' ></i>
-                        </a>
-                        
-                        <ul class="sub-menu">
-                          <li><a href="#" class='text submenu-text'>Device 1</a></li>
-                          <li><a href="#" class='text submenu-text'>Device 2</a></li>
-                          <li><a href="#" class='text submenu-text'>Device 3</a></li>
-                        </ul>
-                    </li>
                  
 
                 </ul>
@@ -133,11 +118,13 @@
                     </div>
                     <span class="mode-text text">Dark mode</span>
 
-                    <div class="toggle-switch">
+                    <div onclick="myFunction()" class="toggle-switch">
                         <span class="switch"></span>
                     </div>
                 </li>
                 
+                
+
             </div>
         </div>
 
@@ -146,7 +133,7 @@
     <section class="home">
         <div class="text">SMARTVILLE Powerhub Dashboard</div>
         <div class="demoWrapper">
-            <iframe src="https://thingsboard.cloud/dashboard/29c850f0-4bcf-11ec-8b0d-a7a2fb97468b?publicId=1d9b61f0-6362-11ec-a919-556e8dbef35c" allowtransparency="true" ></iframe>
+            <iframe sandbox="allow-same-origin allow-scripts" id = "thingsBoard" src="https://thingsboard.cloud/dashboard/29c850f0-4bcf-11ec-8b0d-a7a2fb97468b?publicId=1d9b61f0-6362-11ec-a919-556e8dbef35c" allowtransparency="true" ></iframe>
         </div>
     </section>
 
@@ -157,35 +144,38 @@
       searchBtn = body.querySelector(".search-box"),
       modeSwitch = body.querySelector(".toggle-switch"),
       modeText = body.querySelector(".mode-text");
+
+
+toggle.addEventListener("click" , () =>{
+    sidebar.classList.toggle("close");
+})
+
+searchBtn.addEventListener("click" , () =>{
+    sidebar.classList.remove("close");
+})
+
+modeSwitch.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+    
+    if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+    }else{
+        modeText.innerText = "Dark mode";
         
-      // click on arrow will show submenu of drop down
-      let arrow = document.querySelectorAll(".arrow");
-      for (var i = 0; i < arrow.length; i++) {
-        arrow[i].addEventListener("click", (e)=>{
-           let arrowParent = e.target.parentElement.parentElement;
-           arrowParent.classList.toggle("showMenu");
-        });
-      }
+    }
+});
 
+function myFunction() {
+    console.log(2222);
+    var iframe = document.getElementById("thingsBoard");
+    var elmnt = iframe.contentWindow.document.getElementById("dark-mode-switch");
+    elmnt.click();
+}
 
-        toggle.addEventListener("click" , () =>{
-            sidebar.classList.toggle("close");
-        })
-
-        searchBtn.addEventListener("click" , () =>{
-            sidebar.classList.remove("close");
-        })
-
-        modeSwitch.addEventListener("click" , () =>{
-            body.classList.toggle("dark");
-
-            if(body.classList.contains("dark")){
-                modeText.innerText = "Light mode";
-            }else{
-                modeText.innerText = "Dark mode";
-
-            }
-        });
+function darkMode() {
+    
+    
+}
     </script>
 
 </body>

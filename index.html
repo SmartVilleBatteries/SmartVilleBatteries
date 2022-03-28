@@ -169,7 +169,7 @@ function myFunction() {
     console.log(2222);
     var iframe = document.getElementById("thingsBoard");
     // var elmnt = iframe.contentWindow.document.getElementById("dark-mode-switch");
-    iframe.contentWindow.postMessage(document.getElementById("dark-mode-switch").click(),'"https://thingsboard.cloud/dashboard/29c850f0-4bcf-11ec-8b0d-a7a2fb97468b?publicId=1d9b61f0-6362-11ec-a919-556e8dbef35c"')
+    iframe.contentWindow.postMessage(“document.getElementById("dark-mode-switch").click()”,'"https://thingsboard.cloud/dashboard/29c850f0-4bcf-11ec-8b0d-a7a2fb97468b?publicId=1d9b61f0-6362-11ec-a919-556e8dbef35c"')
     // elmnt.click();
 }
 

@@ -323,10 +323,8 @@ body.dark .home .text{
     top: 0%;
     left: 2%;
     width: 95%;
-    height: 820px;
-    margin-bottom:100px;
+    height: 100%;
     border: 0;
-    background:none transparent;
 }
 .toggleButton {
   margin-top:45px;

@@ -315,8 +315,6 @@ body.dark .home .text{
     position: relative;
     height: 0;
     padding-top: 200%; 
-    background:none transparent;
-/*	overflow: hidden; */
 }
 .demoWrapper iframe {
     position: absolute;

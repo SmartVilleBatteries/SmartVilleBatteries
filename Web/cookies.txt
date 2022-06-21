@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+antoraenergy.com	TRUE	/	FALSE	1999999999	crumb	Bem0YWeeGdpTZTMwZmI3YmU0MzM4ODdjMWVjNDI0NjM5YjA1ZmMz
+

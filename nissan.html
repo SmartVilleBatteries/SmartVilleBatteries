@@ -43,17 +43,15 @@
                     <span class="profession">Trade Street</span>
                 </div>
                             </div>
-            
-            <i class='bx bx-chevron-right toggle toggleButton'></i>
+
+            <i class='bx bx-chevron-right toggle'></i>
         </header>
 
         <div class="menu-bar">
             <div class="menu">
 
-                <li class="search-box ">
-                  <div class = 'searchButton'>
+                <li class="search-box">
                     <i class='bx bx-search icon'></i>
-                  </div>
                     <input type="text" placeholder="Search...">
                 </li>
 
@@ -85,18 +83,12 @@
 
 
                     <li class="nav-link">
-                        <a href="UCSD.html">
+                        <a href="#">
                             <i class='bx bx-pie-chart-alt icon' ></i>
                             <span class="text nav-text">Analytics</span>
                         </a>
                     </li>
-                    
-                    <li class="nav-link">
-                        <a href="UCI.html">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">UCI</span>
-                        </a>
-                    </li>
+
 
                     <li class="nav-link">
                         <a href="#">
@@ -124,13 +116,11 @@
                     </div>
                     <span class="mode-text text">Dark mode</span>
 
-                    <div onclick="myFunction()" class="toggle-switch">
+                    <div class="toggle-switch">
                         <span class="switch"></span>
                     </div>
                 </li>
                 
-                
-
             </div>
         </div>
 
@@ -139,7 +129,8 @@
     <section class="home">
         <div class="text">SMARTVILLE Powerhub Dashboard</div>
         <div class="demoWrapper">
-            <iframe sandbox="allow-same-origin allow-scripts" id = "thingsBoard" src="https://thingsboard.cloud/dashboard/29c850f0-4bcf-11ec-8b0d-a7a2fb97468b?publicId=1d9b61f0-6362-11ec-a919-556e8dbef35c" allowtransparency="true" ></iframe>
+            <iframe src="https://thingsboard.cloud/dashboard/1b092330-f72f-11ec-ad04-83d2f1b7c972?publicId=1d9b61f0-6362-11ec-a919-556e8dbef35c" allowtransparency="true" >
+            </iframe>
         </div>
     </section>
 
@@ -170,18 +161,6 @@ modeSwitch.addEventListener("click" , () =>{
         
     }
 });
-
-function myFunction() {
-    console.log(2222);
-    var iframe = document.getElementById("thingsBoard");
-    var elmnt = iframe.contentWindow.document.getElementById("dark-mode-switch");
-    elmnt.click();
-}
-
-function darkMode() {
-    
-    
-}
     </script>
 
 </body>

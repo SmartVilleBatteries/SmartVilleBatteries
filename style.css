@@ -314,9 +314,11 @@ body.dark .home .text{
 .demoWrapper {
     position: relative;
     /* height: 0; */
+    overflow:auto;
     padding-top: 100%; 
 }
 .demoWrapper iframe {
+    overflow: hidden;
     position: absolute;
     top: 0%;
     left: 2%;
